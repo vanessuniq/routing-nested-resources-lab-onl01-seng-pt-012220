@@ -1,3 +1,12 @@
+<p style='color:red'><%= flash.try(:alert) %></p>
+<h1>
+  
+  <% if @artist %>
+    <%= @artist.name%>'s Songs
+  <% else %>
+    List of All Songs
+  <% end %>
+</h1>
 <ul>
 <% @songs.each do |song| %>
   <li><%= display_artist(song) %> - <%= link_to song.title, song_path(song) %></li>
